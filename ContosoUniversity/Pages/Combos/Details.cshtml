@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model ContosoUniversity.Pages.Combos.DetailsModel
 
 @{
@@ -28,6 +28,26 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Combo.Grp)
+        </dd>
+
+        <dd class="col-sm-10">
+            <table class="table">
+                <tr>
+                    <th>SEQ</th>
+                    <th>口訣</th>
+                </tr>
+                @foreach (var item in Model.Combo.Moves)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Seq)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Text)
+                        </td>
+                    </tr>
+                }
+            </table>
         </dd>
     </dl>
 </div>

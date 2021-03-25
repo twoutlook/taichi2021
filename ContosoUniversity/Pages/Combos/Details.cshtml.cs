@@ -28,8 +28,11 @@ namespace ContosoUniversity.Pages.Combos
                 return NotFound();
             }
 
-            Combo = await _context.Combos.FirstOrDefaultAsync(m => m.ID == id);
-
+            //Combo = await _context.Combos.FirstOrDefaultAsync(m => m.ID == id);
+            Combo = await _context.Combos
+.Include(s => s.Moves)
+.AsNoTracking()
+.FirstOrDefaultAsync(m => m.ID == id);
             if (Combo == null)
             {
                 return NotFound();

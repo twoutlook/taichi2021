@@ -37,7 +37,7 @@ namespace ContosoUniversity.Pages.Moves
             {
                 return NotFound();
             }
-           ViewData["ComboID"] = new SelectList(_context.Combos, "ID", "ID");
+           ViewData["ComboID"] = new SelectList(_context.Combos, "ID", "Name");
             return Page();
         }
 
