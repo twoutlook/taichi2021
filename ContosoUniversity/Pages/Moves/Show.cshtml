@@ -1,0 +1,26 @@
+@page
+@model ContosoUniversity.Pages.Moves.ShowModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+@foreach (var item in Model.Combo)
+{
+    <br />
+    <span> === @item.Name === </span>
+    <br />
+
+    <ol>
+
+        @foreach (var x in item.Moves.Where(x=>x.Seq>0).OrderBy(x => x.Seq))
+        {
+        <li> @x.Text </li>
+            
+        }
+    </ol>
+
+}
