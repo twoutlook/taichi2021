@@ -1,0 +1,44 @@
+@page
+@model ContosoUniversity.Pages.Combos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Combo</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Combo.Seq" class="control-label"></label>
+                <input asp-for="Combo.Seq" class="form-control" />
+                <span asp-validation-for="Combo.Seq" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.Name" class="control-label"></label>
+                <input asp-for="Combo.Name" class="form-control" />
+                <span asp-validation-for="Combo.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combo.Grp" class="control-label"></label>
+                <input asp-for="Combo.Grp" class="form-control" />
+                <span asp-validation-for="Combo.Grp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
