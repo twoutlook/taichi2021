@@ -24,7 +24,7 @@ namespace ContosoUniversity.Pages.Moves
         public async Task OnGetAsync()
         {
             Move = await _context.Moves
-                .Include(m => m.Combo).ToListAsync();
+                .Include(m => m.Combo).OrderBy(x=>x.Combo).ThenBy(x=>x.Seq).ToListAsync();
         }
     }
 }
